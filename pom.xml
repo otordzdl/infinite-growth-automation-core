@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.otordzdl</groupId>
     <artifactId>infinite-growth-automation-core</artifactId>
-    <version>1.0</version>
+    <version>3.0</version>
     <packaging>jar</packaging>
 
     <properties>

@@ -12,12 +12,13 @@ import java.util.Map;
 
 public class WebDriverManagerFactory {
     private static final Logger logger = LoggerFactory.getLogger(BaseWebTest.class);
+
     public static WebDriverManager getWebDriverManager(BrowserType browserType) {
-        String executionMode = ConfigLoader.getProperty("execution_mode").toUpperCase();
+        String executionMode = System.getenv("EXECUTION_MODE").toUpperCase();
 
         if (executionMode == "LOCAL") {
             String os = System.getProperty("os.name").toLowerCase();
-            logger.info("Realizando configuracion LOCAL para os :"+os);
+            logger.info("Realizando configuracion LOCAL para os :" + os);
             Map<String, OperatingSystem> osMap = new HashMap<>();
             osMap.put("win", OperatingSystem.WIN);
             osMap.put("nix", OperatingSystem.LINUX);
@@ -27,11 +28,11 @@ public class WebDriverManagerFactory {
             OperatingSystem operatingSystem = osMap.get(os.contains("win") ? "win" : os.contains("nix") || os.contains("nux") ? "nix" : os.contains("mac") ? "mac" : null);
 
             if (operatingSystem == null) {
-                logger.error("Sistema operativo no soportado: "+os);
+                logger.error("Sistema operativo no soportado: " + os);
                 throw new UnsupportedOperationException("Sistema operativo no compatible: " + os);
             }
 
-            logger.info("Configurando driver "+ browserType.toString() + " para os "+ os);
+            logger.info("Configurando driver " + browserType.toString() + " para os " + os);
             switch (browserType) {
                 case CHROME:
                     return WebDriverManager.chromedriver().operatingSystem(operatingSystem);
@@ -45,7 +46,7 @@ public class WebDriverManagerFactory {
                     return WebDriverManager.safaridriver().operatingSystem(operatingSystem);
 
                 default:
-                    logger.error("Driver no soportado para os "+ os);
+                    logger.error("Driver no soportado para os " + os);
                     throw new IllegalArgumentException("Navegador no compatible: " + browserType.getName());
             }
         } else {

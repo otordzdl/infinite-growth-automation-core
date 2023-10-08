@@ -1,4 +1,4 @@
-package core.selenium;
+package io.github.otordzdl.infinitegrowth.core.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.github.bonigarcia.wdm.config.OperatingSystem;

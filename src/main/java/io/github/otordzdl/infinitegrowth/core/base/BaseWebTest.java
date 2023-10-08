@@ -1,4 +1,4 @@
-package core.base;
+package io.github.otordzdl.infinitegrowth.core.base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -38,7 +38,7 @@ public abstract class BaseWebTest implements TestWebInterface {
     @Parameters("browser")
     public void setUpTest(String browser, ITestContext context) {
 
-        String executionMode = ConfigLoader.getProperty("execution_mode").toUpperCase();
+        String executionMode =  System.getenv("EXECUTION_MODE");
         test = extent.createTest(context.getName());
         logger.info("Setup de testcase " + context.getName());
         BrowserType browserType = BrowserType.valueOf(browser.toUpperCase());

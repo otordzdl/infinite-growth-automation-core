@@ -1,4 +1,4 @@
-package core.selenium;
+package io.github.otordzdl.infinitegrowth.core.selenium;
 
 public enum DeviceFarmType {
     BROWSERSTACK("browserstack"),

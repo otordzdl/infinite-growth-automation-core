@@ -1,4 +1,4 @@
-package core.reporting;
+package io.github.otordzdl.infinitegrowth.core.reporting;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;

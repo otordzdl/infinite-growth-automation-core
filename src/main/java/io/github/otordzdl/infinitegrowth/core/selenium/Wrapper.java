@@ -1,4 +1,4 @@
-package core.selenium;
+package io.github.otordzdl.infinitegrowth.core.selenium;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

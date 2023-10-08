@@ -1,4 +1,4 @@
-package core.selenium;
+package io.github.otordzdl.infinitegrowth.core.selenium;
 
 import io.github.otordzdl.infinitegrowth.core.base.BaseWebTest;
 import io.github.otordzdl.infinitegrowth.core.utils.ConfigLoader;
@@ -31,8 +31,8 @@ public class RemoteWebDriverManager {
         DeviceFarmType deviceFarmType = DeviceFarmType.valueOf(deviceFarm.toUpperCase());
 
 
-        String deviceFarmUser = ConfigLoader.getProperty("device_farm_user");
-        String deviceFarmApiKey = ConfigLoader.getProperty("device_farm_api_key");
+        String deviceFarmUser = System.getenv("DEVICE_FARM_USER");
+        String deviceFarmApiKey =System.getenv("DEVICE_FARM_API_KEY");
         String browserstackHub = ConfigLoader.getProperty("browserstack_hub");
         String saucelabsHub = ConfigLoader.getProperty("saucelabs_hub");
         String lamdatestHub = ConfigLoader.getProperty("lamdatest_hub");

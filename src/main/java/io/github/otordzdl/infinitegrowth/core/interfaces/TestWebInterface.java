@@ -1,4 +1,4 @@
-package core.interfaces;
+package io.github.otordzdl.infinitegrowth.core.interfaces;
 
 import org.openqa.selenium.WebDriver;
 

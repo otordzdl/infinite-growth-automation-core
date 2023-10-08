@@ -1,4 +1,4 @@
-package core.listeners;
+package io.github.otordzdl.infinitegrowth.core.listeners;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

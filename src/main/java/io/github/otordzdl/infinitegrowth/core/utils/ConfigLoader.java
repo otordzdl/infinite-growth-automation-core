@@ -1,4 +1,4 @@
-package core.utils;
+package io.github.otordzdl.infinitegrowth.core.utils;
 
 import java.io.FileInputStream;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package core.base;
+package io.github.otordzdl.infinitegrowth.core.base;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

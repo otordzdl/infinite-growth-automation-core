@@ -38,7 +38,7 @@ public abstract class BaseWebTest implements TestWebInterface {
     @Parameters("browser")
     public void setUpTest(String browser, ITestContext context) {
 
-        String executionMode =  System.getenv("EXECUTION_MODE");
+        String executionMode = ConfigLoader.getProperty("execution_mode").toUpperCase();
         test = extent.createTest(context.getName());
         logger.info("Setup de testcase " + context.getName());
         BrowserType browserType = BrowserType.valueOf(browser.toUpperCase());

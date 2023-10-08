@@ -14,7 +14,7 @@ public class WebDriverManagerFactory {
     private static final Logger logger = LoggerFactory.getLogger(BaseWebTest.class);
 
     public static WebDriverManager getWebDriverManager(BrowserType browserType) {
-        String executionMode = System.getenv("EXECUTION_MODE").toUpperCase();
+        String executionMode = ConfigLoader.getProperty("execution_mode").toUpperCase();
 
         if (executionMode == "LOCAL") {
             String os = System.getProperty("os.name").toLowerCase();

@@ -1,5 +1,6 @@
 package io.github.otordzdl.infinitegrowth.core.selenium;
 
+import io.github.otordzdl.infinitegrowth.core.utils.ConfigLoader;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,8 +18,16 @@ public class Wrapper {
 
     public Wrapper(WebDriver driver) {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        String implicitWaitString= ConfigLoader.getProperty("implicit_wait");
+        int implicitWait;
+        try {
+            implicitWait = Integer.parseInt(implicitWaitString);
+        } catch (NumberFormatException e) {
+            implicitWait = 5;
+        }
+
+        wait = new WebDriverWait(driver, Duration.ofSeconds(implicitWait));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(implicitWait));
     }
 
     public void navigateTo(String url) {
